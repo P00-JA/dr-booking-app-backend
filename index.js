@@ -4,9 +4,12 @@ import mongoose from "./database/database.js";
 import router from "./routes/index.js";
 
 const app = express();
+
+//middlewares
 app.use(cors());
 app.use(express.json());
 app.use(express.static('uploads'));
+//routes
 app.use(router);
 
 app.use('*',(req,res)=>{
